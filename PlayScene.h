@@ -14,4 +14,5 @@ public:
 	void Draw() override;
 
 private:
+	class GameStateMachine* gameStateMachine;
 };

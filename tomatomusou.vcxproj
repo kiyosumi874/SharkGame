@@ -162,6 +162,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="App.cpp" />
+    <ClCompile Include="GameStateBase.cpp" />
+    <ClCompile Include="GameStateMachine.cpp" />
+    <ClCompile Include="GameStatePlayerRound.cpp" />
+    <ClCompile Include="GameStateResult.cpp" />
+    <ClCompile Include="GameStates.cpp" />
+    <ClCompile Include="GameStateSharkFly.cpp" />
+    <ClCompile Include="GameStateSharkLandsOnWater.cpp" />
+    <ClCompile Include="GameStateSharkShoot.cpp" />
+    <ClCompile Include="GameStateStartCountDown.cpp" />
+    <ClCompile Include="GameStateTitle.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PlayScene.cpp" />
@@ -178,6 +188,17 @@
   <ItemGroup>
     <ClInclude Include="App.h" />
     <ClInclude Include="Common.h" />
+    <ClInclude Include="GameStateBase.h" />
+    <ClInclude Include="GameStateMachine.h" />
+    <ClInclude Include="GameStatePlayerRound.h" />
+    <ClInclude Include="GameStateResult.h" />
+    <ClInclude Include="GameStates.h" />
+    <ClInclude Include="GameStateSharkFly.h" />
+    <ClInclude Include="GameStateSharkLandsOnWater.h" />
+    <ClInclude Include="GameStateSharkShoot.h" />
+    <ClInclude Include="GameStateStartCountDown.h" />
+    <ClInclude Include="GameStateTitle.h" />
+    <ClInclude Include="GameStateType.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="PlayScene.h" />
     <ClInclude Include="ResultScene.h" />

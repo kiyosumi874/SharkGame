@@ -1,13 +1,15 @@
 ﻿#include "PlayScene.h"
 #include "DxLib.h"
 #include "Input.h"
+#include "GameStateMachine.h"
 
 /// <summary>
 /// コンストラクタ
 /// </summary>
 PlayScene::PlayScene()
+	: gameStateMachine(nullptr)
 {
-	// 処理なし
+	gameStateMachine = new GameStateMachine();
 }
 
 /// <summary>
@@ -15,7 +17,7 @@ PlayScene::PlayScene()
 /// </summary>
 PlayScene::~PlayScene()
 {
-	// 処理なし
+	delete gameStateMachine;
 }
 
 /// <summary>
@@ -26,7 +28,7 @@ TAG_SCENE PlayScene::Update(float deltaTime)
 	// 次のシーンへ
 	if (Input::IsDown1P(BUTTON_ID_START))
 	{
-		return TAG_SCENE::TAG_RESULT;
+		gameStateMachine->ChangeState(GameStateType::Title);
 	}
 
 	// 終了
@@ -34,6 +36,8 @@ TAG_SCENE PlayScene::Update(float deltaTime)
 	{
 		return TAG_SCENE::TAG_END;
 	}
+
+	gameStateMachine->OnUpdate(deltaTime);
 
 	// 次のループもこのシーンを継続
 	return TAG_SCENE::TAG_NONE;
@@ -47,4 +51,5 @@ void PlayScene::Draw()
 #ifdef _DEBUG
 	printfDx("PlayScene\n");
 #endif // _DEBUG
+	gameStateMachine->OnDraw();
 }

@@ -11,6 +11,16 @@
     <ClCompile Include="TimeCount.cpp" />
     <ClCompile Include="TitleScene.cpp" />
     <ClCompile Include="StopWatch.cpp" />
+    <ClCompile Include="GameStateBase.cpp" />
+    <ClCompile Include="GameStateTitle.cpp" />
+    <ClCompile Include="GameStates.cpp" />
+    <ClCompile Include="GameStateMachine.cpp" />
+    <ClCompile Include="GameStateStartCountDown.cpp" />
+    <ClCompile Include="GameStatePlayerRound.cpp" />
+    <ClCompile Include="GameStateSharkShoot.cpp" />
+    <ClCompile Include="GameStateSharkFly.cpp" />
+    <ClCompile Include="GameStateResult.cpp" />
+    <ClCompile Include="GameStateSharkLandsOnWater.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App.h" />
@@ -24,5 +34,16 @@
     <ClInclude Include="TimeCount.h" />
     <ClInclude Include="TitleScene.h" />
     <ClInclude Include="StopWatch.h" />
+    <ClInclude Include="GameStateBase.h" />
+    <ClInclude Include="GameStateTitle.h" />
+    <ClInclude Include="GameStateType.h" />
+    <ClInclude Include="GameStates.h" />
+    <ClInclude Include="GameStateMachine.h" />
+    <ClInclude Include="GameStateStartCountDown.h" />
+    <ClInclude Include="GameStatePlayerRound.h" />
+    <ClInclude Include="GameStateSharkShoot.h" />
+    <ClInclude Include="GameStateSharkFly.h" />
+    <ClInclude Include="GameStateResult.h" />
+    <ClInclude Include="GameStateSharkLandsOnWater.h" />
   </ItemGroup>
 </Project>
