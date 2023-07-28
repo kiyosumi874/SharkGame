@@ -1,49 +1,197 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="App.cpp" />
-    <ClCompile Include="Input.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="PlayScene.cpp" />
-    <ClCompile Include="ResultScene.cpp" />
-    <ClCompile Include="SceneManager.cpp" />
-    <ClCompile Include="Sound.cpp" />
-    <ClCompile Include="TimeCount.cpp" />
-    <ClCompile Include="TitleScene.cpp" />
-    <ClCompile Include="StopWatch.cpp" />
-    <ClCompile Include="GameStateBase.cpp" />
-    <ClCompile Include="GameStateTitle.cpp" />
-    <ClCompile Include="GameStates.cpp" />
-    <ClCompile Include="GameStateMachine.cpp" />
-    <ClCompile Include="GameStateStartCountDown.cpp" />
-    <ClCompile Include="GameStatePlayerRound.cpp" />
-    <ClCompile Include="GameStateSharkShoot.cpp" />
-    <ClCompile Include="GameStateSharkFly.cpp" />
-    <ClCompile Include="GameStateResult.cpp" />
-    <ClCompile Include="GameStateSharkLandsOnWater.cpp" />
+    <ClCompile Include="Scripts\App.cpp" />
+    <ClCompile Include="Scripts\main.cpp" />
+    <ClCompile Include="Scripts\Input\Input.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\GameStateMachine\GameStateBase.cpp">
+      <Filter>GameStateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\GameStateMachine\GameStateMachine.cpp">
+      <Filter>GameStateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\GameStateMachine\GameStatePlayerRound.cpp">
+      <Filter>GameStateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\GameStateMachine\GameStateResult.cpp">
+      <Filter>GameStateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\GameStateMachine\GameStates.cpp">
+      <Filter>GameStateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\GameStateMachine\GameStateSharkFly.cpp">
+      <Filter>GameStateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\GameStateMachine\GameStateSharkLandsOnWater.cpp">
+      <Filter>GameStateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\GameStateMachine\GameStateSharkShoot.cpp">
+      <Filter>GameStateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\GameStateMachine\GameStateStartCountDown.cpp">
+      <Filter>GameStateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\GameStateMachine\GameStateTitle.cpp">
+      <Filter>GameStateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\Scene\PlayScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\Scene\ResultScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\Scene\SceneManager.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\Scene\TitleScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\Sound\Sound.cpp">
+      <Filter>Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\Time\StopWatch.cpp">
+      <Filter>Time</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\Time\TimeCount.cpp">
+      <Filter>Time</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\Shark\Shark.cpp">
+      <Filter>Shark</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\Player\Player.cpp">
+      <Filter>Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\UI\CountDownUI.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\UI\PressAUI.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\Map\Map.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\Map\Star.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\UI\ResultScoreUI.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="App.h" />
-    <ClInclude Include="Common.h" />
-    <ClInclude Include="Input.h" />
-    <ClInclude Include="PlayScene.h" />
-    <ClInclude Include="ResultScene.h" />
-    <ClInclude Include="Scene.h" />
-    <ClInclude Include="SceneManager.h" />
-    <ClInclude Include="Sound.h" />
-    <ClInclude Include="TimeCount.h" />
-    <ClInclude Include="TitleScene.h" />
-    <ClInclude Include="StopWatch.h" />
-    <ClInclude Include="GameStateBase.h" />
-    <ClInclude Include="GameStateTitle.h" />
-    <ClInclude Include="GameStateType.h" />
-    <ClInclude Include="GameStates.h" />
-    <ClInclude Include="GameStateMachine.h" />
-    <ClInclude Include="GameStateStartCountDown.h" />
-    <ClInclude Include="GameStatePlayerRound.h" />
-    <ClInclude Include="GameStateSharkShoot.h" />
-    <ClInclude Include="GameStateSharkFly.h" />
-    <ClInclude Include="GameStateResult.h" />
-    <ClInclude Include="GameStateSharkLandsOnWater.h" />
+    <ClInclude Include="Scripts\App.h" />
+    <ClInclude Include="Scripts\Common.h" />
+    <ClInclude Include="Scripts\Input\Input.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\GameStateMachine\GameStateBase.h">
+      <Filter>GameStateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\GameStateMachine\GameStateMachine.h">
+      <Filter>GameStateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\GameStateMachine\GameStatePlayerRound.h">
+      <Filter>GameStateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\GameStateMachine\GameStateResult.h">
+      <Filter>GameStateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\GameStateMachine\GameStates.h">
+      <Filter>GameStateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\GameStateMachine\GameStateSharkFly.h">
+      <Filter>GameStateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\GameStateMachine\GameStateSharkLandsOnWater.h">
+      <Filter>GameStateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\GameStateMachine\GameStateSharkShoot.h">
+      <Filter>GameStateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\GameStateMachine\GameStateStartCountDown.h">
+      <Filter>GameStateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\GameStateMachine\GameStateTitle.h">
+      <Filter>GameStateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\GameStateMachine\GameStateType.h">
+      <Filter>GameStateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\Scene\PlayScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\Scene\ResultScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\Scene\Scene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\Scene\SceneManager.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\Scene\TitleScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\Sound\Sound.h">
+      <Filter>Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\Time\StopWatch.h">
+      <Filter>Time</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\Time\TimeCount.h">
+      <Filter>Time</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\Shark\Shark.h">
+      <Filter>Shark</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\GameStateInitializeData.h" />
+    <ClInclude Include="Scripts\Player\Player.h">
+      <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\UI\CountDownUI.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\UI\PressAUI.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\Map\Map.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\Map\Star.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\UI\ResultScoreUI.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Time">
+      <UniqueIdentifier>{73426d4f-a523-4834-a61c-58f5c1c07dbd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sound">
+      <UniqueIdentifier>{3c09a134-6085-4baf-a2d2-e269267ef010}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{3d761e74-e44a-420d-8d9b-0418e142c0b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Input">
+      <UniqueIdentifier>{dabd4bc6-2ad4-4580-b452-2ae479a0cd93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameStateMachine">
+      <UniqueIdentifier>{3ec47e66-7cfc-49bf-a70e-8f942acdbf40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shark">
+      <UniqueIdentifier>{0b11b774-ad5a-4c97-be65-3eb8b5ba8ad1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Player">
+      <UniqueIdentifier>{3a272287-3705-4d4e-b60a-0b7907e696a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{9a771971-42f7-4100-a8b1-b3eeb4cb4d73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Map">
+      <UniqueIdentifier>{598e5811-a409-4812-95fa-092f05a284c8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
