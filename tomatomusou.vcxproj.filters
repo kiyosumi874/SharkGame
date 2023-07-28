@@ -21,6 +21,8 @@
     <ClCompile Include="GameStateSharkFly.cpp" />
     <ClCompile Include="GameStateResult.cpp" />
     <ClCompile Include="GameStateSharkLandsOnWater.cpp" />
+    <ClCompile Include="Map.cpp" />
+    <ClCompile Include="Star.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App.h" />
@@ -45,5 +47,7 @@
     <ClInclude Include="GameStateSharkFly.h" />
     <ClInclude Include="GameStateResult.h" />
     <ClInclude Include="GameStateSharkLandsOnWater.h" />
+    <ClInclude Include="Map.h" />
+    <ClInclude Include="Star.h" />
   </ItemGroup>
 </Project>

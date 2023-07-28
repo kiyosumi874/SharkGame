@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include "Scene.h"
+#include"Map.h"
 
 /// <summary>
 /// プレイシーン
@@ -15,4 +16,6 @@ public:
 
 private:
 	class GameStateMachine* gameStateMachine;
+	
+	Map* map = new Map();
 };

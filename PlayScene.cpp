@@ -39,6 +39,8 @@ TAG_SCENE PlayScene::Update(float deltaTime)
 
 	gameStateMachine->OnUpdate(deltaTime);
 
+	map->Update(deltaTime);
+
 	// 次のループもこのシーンを継続
 	return TAG_SCENE::TAG_NONE;
 }
@@ -52,4 +54,6 @@ void PlayScene::Draw()
 	printfDx("PlayScene\n");
 #endif // _DEBUG
 	gameStateMachine->OnDraw();
+
+	map->Draw();
 }

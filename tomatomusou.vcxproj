@@ -174,10 +174,12 @@
     <ClCompile Include="GameStateTitle.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Map.cpp" />
     <ClCompile Include="PlayScene.cpp" />
     <ClCompile Include="ResultScene.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Sound.cpp" />
+    <ClCompile Include="Star.cpp" />
     <ClCompile Include="StopWatch.cpp">
       <SubType>
       </SubType>
@@ -200,11 +202,13 @@
     <ClInclude Include="GameStateTitle.h" />
     <ClInclude Include="GameStateType.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="Map.h" />
     <ClInclude Include="PlayScene.h" />
     <ClInclude Include="ResultScene.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Sound.h" />
+    <ClInclude Include="Star.h" />
     <ClInclude Include="StopWatch.h">
       <SubType>
       </SubType>
