@@ -16,6 +16,6 @@ public:
 	Scene() { /*処理なし*/ }
 	virtual ~Scene(){ /*処理なし*/ }
 
-	virtual TAG_SCENE Update() = 0;
+	virtual TAG_SCENE Update(float deltaTime) = 0;
 	virtual void Draw() = 0;
 };

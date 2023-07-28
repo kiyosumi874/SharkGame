@@ -11,7 +11,7 @@ public:
 	TitleScene(); // コンストラクタ
 	~TitleScene() override; // デストラクタ
 
-	TAG_SCENE Update() override; // 更新
+	TAG_SCENE Update(float deltaTime) override; // 更新
 	void Draw() override; // 描画
 private:
 };

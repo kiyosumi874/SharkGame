@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include "Scene.h"
+#include "DxLib.h"
 
 /// <summary>
 /// シーンマネージャー
@@ -15,5 +16,14 @@ public:
 	void SetNowScene(const TAG_SCENE& tag);
 private:
 	void ClearScene();
+	void SaveDeltaTime();
 	Scene* currentScene;
+
+	// デルタタイム
+	float deltaTime;
+	LONGLONG currentTime;
+	LONGLONG time;
+	int fps;
+	int fpsCounter;
+	LONGLONG fpsCheckTime;
 };

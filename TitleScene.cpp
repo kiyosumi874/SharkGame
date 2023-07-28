@@ -22,7 +22,7 @@ TitleScene::~TitleScene()
 /// <summary>
 /// 更新
 /// </summary>
-TAG_SCENE TitleScene::Update()
+TAG_SCENE TitleScene::Update(float deltaTime)
 {
 	// 次のシーンへ
 	if (Input::IsDown1P(BUTTON_ID_START))

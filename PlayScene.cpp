@@ -21,7 +21,7 @@ PlayScene::~PlayScene()
 /// <summary>
 /// 更新
 /// </summary>
-TAG_SCENE PlayScene::Update()
+TAG_SCENE PlayScene::Update(float deltaTime)
 {
 	// 次のシーンへ
 	if (Input::IsDown1P(BUTTON_ID_START))

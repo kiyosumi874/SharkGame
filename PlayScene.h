@@ -10,7 +10,7 @@ public:
 	PlayScene();
 	~PlayScene() override;
 
-	TAG_SCENE Update() override;
+	TAG_SCENE Update(float deltaTime) override;
 	void Draw() override;
 
 private:

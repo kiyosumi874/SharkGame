@@ -20,7 +20,7 @@ ResultScene::~ResultScene()
 /// <summary>
 /// 更新
 /// </summary>
-TAG_SCENE ResultScene::Update()
+TAG_SCENE ResultScene::Update(float deltaTime)
 {
 	if (Input::IsDown1P(BUTTON_ID_START))
 	{
