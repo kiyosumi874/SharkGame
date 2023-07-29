@@ -7,7 +7,7 @@ Star::Star()
 	r = (float)(rand() % 21) / 10.f + 2.f;
 	biggerRRatio = 1.f;
 	rad = 0.f;
-	speedRatio = ((float)(rand() % 3) + 1.f) * 100.f;
+	speedRatio = ((float)(rand() % 3) + 1.f) * 300.f;
 	deadFlag = false;
 }
 

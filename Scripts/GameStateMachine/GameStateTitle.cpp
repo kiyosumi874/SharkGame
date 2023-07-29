@@ -4,6 +4,7 @@
 #include "Player/Player.h"
 #include "Map/Map.h"
 #include "UI/PressAUI.h"
+#include "Shark/Shark.h"
 
 GameStateTitle::GameStateTitle(ChangeStateMediator changeStateMediator, GameStateMachine* gameStateMachine, InitializeData initData)
 	: GameStateBase(changeStateMediator, gameStateMachine, initData)
@@ -17,6 +18,9 @@ void GameStateTitle::OnEnter()
 {
 	initData.pressAUI->Initialize(true);
 	initData.map->Initialize();
+	initData.player->Initialize();
+	initData.shark->Init();
+	initData.shark->SetplayerAngle(initData.player->GetRotationRad());
 }
 
 /// <summary>
@@ -39,9 +43,10 @@ void GameStateTitle::OnDraw()
 #ifdef _DEBUG
 	printfDx("State:Title\n");
 #endif // _DEBUG
-	initData.map->Draw();
+	initData.map->DrawBeach();
 	initData.player->Draw();
 	initData.pressAUI->Draw();
+	initData.shark->Draw();
 }
 
 /// <summary>

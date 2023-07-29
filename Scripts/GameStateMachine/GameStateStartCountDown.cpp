@@ -5,6 +5,7 @@
 #include "UI/CountDownUI.h"
 #include "Player/Player.h"
 #include "Map/Map.h"
+#include "Shark/Shark.h"
 
 GameStateStartCountDown::GameStateStartCountDown(ChangeStateMediator changeStateMediator, GameStateMachine* gameStateMachine, InitializeData initData)
 	: GameStateBase(changeStateMediator, gameStateMachine, initData)
@@ -37,8 +38,9 @@ void GameStateStartCountDown::OnDraw()
 	printfDx("State:StartCountDown\n");
 	printfDx("Count:%f", initData.stopWatch->GetSeconds());
 #endif // _DEBUG
-	initData.map->Draw();
+	initData.map->DrawBeach();
 	initData.player->Draw();
+	initData.shark->Draw();
 	initData.countDownUI->Draw();
 }
 

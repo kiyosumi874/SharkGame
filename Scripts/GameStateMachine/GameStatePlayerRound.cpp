@@ -22,7 +22,15 @@ void GameStatePlayerRound::OnUpdate(float deltaTime)
 	}
 
 	initData.player->Update(deltaTime);
-	initData.shark->UpdatePlayerRound();
+	initData.shark->SetplayerAngle(initData.player->GetRotationRad());
+	auto isPushButton = initData.player->GetIsPushButton();
+	initData.shark->SetisThrow(isPushButton);
+	initData.shark->UpdatePlayerRound(deltaTime);
+	if (isPushButton)
+	{
+		ChangeState(GameStateType::SharkShoot);
+	}
+
 }
 
 void GameStatePlayerRound::OnDraw()
@@ -30,7 +38,7 @@ void GameStatePlayerRound::OnDraw()
 #ifdef _DEBUG
 	printfDx("State:PlayerRound\n");
 #endif // _DEBUG
-	initData.map->Draw();
+	initData.map->DrawBeach();
 	initData.player->Draw();
 	initData.shark->Draw();
 }

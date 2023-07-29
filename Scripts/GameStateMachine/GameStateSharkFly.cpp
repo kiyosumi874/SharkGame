@@ -11,6 +11,7 @@ GameStateSharkFly::GameStateSharkFly(ChangeStateMediator changeStateMediator, Ga
 
 void GameStateSharkFly::OnEnter()
 {
+	initData.shark->InitSharkRound();
 }
 
 void GameStateSharkFly::OnUpdate(float deltaTime)
@@ -20,7 +21,12 @@ void GameStateSharkFly::OnUpdate(float deltaTime)
 		ChangeState(GameStateType::SharkLandsOnWater);
 	}
 	initData.map->Update(deltaTime);
-	initData.shark->UpdateSharkRound();
+	initData.shark->UpdateSharkRound(deltaTime);
+
+	if (initData.shark->GetisLandsOnWater())
+	{
+		ChangeState(GameStateType::SharkLandsOnWater);
+	}
 }
 
 void GameStateSharkFly::OnDraw()

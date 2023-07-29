@@ -10,13 +10,38 @@ public:
 	Player();
 
 	/// <summary>
+	/// 初期化
+	/// </summary>
+	void Initialize();
+
+	/// <summary>
 	/// 状態の更新
 	/// </summary>
 	/// <param name="deltaTime">デルタタイム</param>
 	void Update(float deltaTime);
 
+	/// <summary>
+	/// 描画
+	/// </summary>
 	void Draw();
 
+	/// <summary>
+	/// プレイヤーの回転角度
+	/// </summary>
+	/// <returns></returns>
+	float GetRotationRad() const { return playerAngle; }
+
+	/// <summary>
+	/// 確定した最終速度
+	/// </summary>
+	/// <returns></returns>
+	float GetVelocity() const { return velocity; }
+
+	/// <summary>
+	/// ボタンを押したか
+	/// </summary>
+	/// <returns></returns>
+	bool GetIsPushButton() const{ return pushFlg; }
 private:
 
 	VECTOR position;		// 座標ベクトル
@@ -29,6 +54,8 @@ private:
 
 	int graphHandle;		// 画像ハンドル
 
+	int gauseGraph;			// ゲージ画像
+
 	float power;			// 飛ばす力
 
 	float inputAngle;		// スティックの入力角度
@@ -39,7 +66,21 @@ private:
 
 	float playerAngle;
 
+	float rotationSum;
+
 	float playerAngleAdd;
 
+	float prevTimer;
+
+	float powerAdd;
+
+	float velocity;
+
+	int timer;
+
 	bool prevFrameInput;	// 前のフレームで入力があったか
+
+	bool isStartTimer;
+
+	bool pushFlg;
 };

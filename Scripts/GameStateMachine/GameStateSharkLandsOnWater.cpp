@@ -18,6 +18,12 @@ void GameStateSharkLandsOnWater::OnUpdate(float deltaTime)
 	{
 		ChangeState(GameStateType::Result);
 	}
+	initData.map->SprashUpdate(deltaTime);
+
+	if (initData.map->GetSprashEndFlag())
+	{
+		ChangeState(GameStateType::Result);
+	}
 }
 
 void GameStateSharkLandsOnWater::OnDraw()
@@ -26,6 +32,7 @@ void GameStateSharkLandsOnWater::OnDraw()
 	printfDx("State:SharkLandsOnWater\n");
 #endif // _DEBUG
 	initData.map->Draw();
+	initData.map->DrawWaterSprash();
 }
 
 void GameStateSharkLandsOnWater::OnExit()

@@ -18,7 +18,7 @@ void GameStateResult::OnEnter()
 
 void GameStateResult::OnUpdate(float deltaTime)
 {
-	if (Input::IsDown1P(BUTTON_ID_START))
+	if (Input::IsDown1P(BUTTON_ID_A))
 	{
 		ChangeState(GameStateType::Title);
 	}
