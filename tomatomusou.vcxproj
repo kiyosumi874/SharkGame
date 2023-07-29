@@ -39,10 +39,12 @@
     <ClCompile Include="Scripts\Scene\ResultScene.cpp" />
     <ClCompile Include="Scripts\Scene\SceneManager.cpp" />
     <ClCompile Include="Scripts\Scene\TitleScene.cpp" />
+    <ClCompile Include="Scripts\ScoreDraw.cpp" />
     <ClCompile Include="Scripts\Shark\Shark.cpp" />
     <ClCompile Include="Scripts\Sound\Sound.cpp" />
     <ClCompile Include="Scripts\Time\StopWatch.cpp" />
     <ClCompile Include="Scripts\Time\TimeCount.cpp" />
+    <ClCompile Include="Scripts\UI.cpp" />
     <ClCompile Include="Scripts\UI\CountDownUI.cpp" />
     <ClCompile Include="Scripts\UI\PressAUI.cpp" />
     <ClCompile Include="Scripts\UI\ResultScoreUI.cpp" />
@@ -71,10 +73,12 @@
     <ClInclude Include="Scripts\Scene\Scene.h" />
     <ClInclude Include="Scripts\Scene\SceneManager.h" />
     <ClInclude Include="Scripts\Scene\TitleScene.h" />
+    <ClInclude Include="Scripts\ScoreDraw.h" />
     <ClInclude Include="Scripts\Shark\Shark.h" />
     <ClInclude Include="Scripts\Sound\Sound.h" />
     <ClInclude Include="Scripts\Time\StopWatch.h" />
     <ClInclude Include="Scripts\Time\TimeCount.h" />
+    <ClInclude Include="Scripts\UI.h" />
     <ClInclude Include="Scripts\UI\CountDownUI.h" />
     <ClInclude Include="Scripts\UI\PressAUI.h" />
     <ClInclude Include="Scripts\UI\ResultScoreUI.h" />

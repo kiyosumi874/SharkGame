@@ -16,6 +16,8 @@ Player::Player()
 	// ゲージ画像
 	gauseGraph = LoadGraph("Textures/Player/Gauge.png");
 
+	graphHandle2 = LoadGraph("Textures/UI/AButton.png");
+
 	// デッドゾーン設定
 	SetJoypadDeadZone(DX_INPUT_PAD1, 0.9);
 }
@@ -45,6 +47,8 @@ void Player::Initialize()
 
 	timer = 10;
 
+	angle=0;
+
 	powerAdd = 0;
 
 	isStartTimer = false;
@@ -60,41 +64,31 @@ void Player::Initialize()
 // 状態の更新
 void Player::Update(float deltaTime)
 {
-	// スタートタイマーフラグが立っていたら タイマーを開始させる
-	if (isStartTimer)
-	{
-		// 一秒の経過を判定
-		if (GetNowCount() - prevTimer >= 1000)
-		{
-			// タイマーが0の時 プレイヤーの角度を設定
-			if (timer == 0)
-			{
-				playerAngle = DX_PI_F;
-			}
+	//// スタートタイマーフラグが立っていたら タイマーを開始させる
+	//if (isStartTimer)
+	//{
+	//	// 一秒の経過を判定
+	//	if (GetNowCount() - prevTimer >= 1000)
+	//	{
+	//		// タイマーの減少
+	//		timer--;
 
-			// タイマーの減少
-			timer--;
-
-			// タイマー計測のための 前フレームの時間保存
-			prevTimer = GetNowCount();
-		}
-	}
+	//		// タイマー計測のための 前フレームの時間保存
+	//		prevTimer = GetNowCount();
+	//	}
+	//}
 
 	// タイマーが0より下 かつ ボタンが押されていないなら
-	if (timer < 0 && !pushFlg)
+	if (power>100 && !pushFlg)
 	{
-		playerAngleAdd += (rotationSum / rotationSum) * deltaTime * 2;
-		playerAngle += (rotationSum / fabs(rotationSum)) * deltaTime * 2;
-
 		// ボタンが押されたか 
-		if (Input::IsPress1P(ButtonID::BUTTON_ID_A) || timer <= -6)
+		if (Input::IsPress1P(ButtonID::BUTTON_ID_A))
 		{
 			pushFlg = true;
 		}
 
 		if (pushFlg)
 		{
-			float angle = playerAngleAdd - DX_PI_F / 2;
 			if (angle >= DX_PI_F / 180 * 82.5 &&
 				angle <= DX_PI_F / 180 * 97.5)
 				powerAdd = 2;
@@ -108,6 +102,9 @@ void Player::Update(float deltaTime)
 			velocity = power * powerAdd;
 		}
 	}
+
+	float x = acos(playerAngle);
+	float y = asin(playerAngle);
 
 	if (timer >= 0)
 	{
@@ -142,10 +139,10 @@ void Player::Update(float deltaTime)
 			// パワーがあるなら減らす
 			if (power > 0) {
 				// パワー減衰
-				power -= deltaTime * 5.0;
+				power -= 0.1;
 
 				// 回転合計量 減衰 
-				rotationSum -= (rotationSum / fabs(rotationSum)) * deltaTime * 5.0;
+				rotationSum -= (rotationSum / fabs(rotationSum))*0.1;
 			}
 			// パワーがないなら 0 にセット
 			else {
@@ -173,14 +170,11 @@ void Player::Update(float deltaTime)
 
 		if (prevFrameInput && angleBetween != 0.0f)
 		{
-			rotationSum += angleBetween * deltaTime * 500;
+			rotationSum += angleBetween;
 			power = fabs(rotationSum);
 		}
 
-		if (power < 100)
-			playerAngle += DX_PI_F / 180 * (rotationSum / 50);
-		else
-			playerAngle += DX_PI_F / 180 * (rotationSum / rotationSum * 100 / 50);
+		playerAngle += DX_PI_F / 180 * (rotationSum / 10);
 
 		if (fabs(inputX) + fabs(inputY) > 0)
 		{
@@ -206,9 +200,11 @@ void Player::Draw()
 {
 	DrawRotaGraph(position.x, position.y, 0.5, playerAngle, graphHandle, TRUE);
 
-	if (timer < 0)
+	if (power>100)
 	{
 		DrawGraph(position.x, position.y - 128, gauseGraph, TRUE);
+		DrawGraph(position.x + 150, position.y - 200, graphHandle2, TRUE);
+
 	}
 
 	//VECTOR rotationVector = VTransform(VGet(0, 50, 0), MGetRotZ(playerAngle));
@@ -219,15 +215,15 @@ void Player::Draw()
 	//DrawLine(position.x, position.y, position.x + rotationVector.x, position.y + rotationVector.y, GetColor(0, 255, 0));
 
 
-	printfDx("\nTimer : %d", timer);
+	/*printfDx("\nTimer : %d", timer);
 	printfDx("\nplayerAngle %f", playerAngle);
-	printfDx("\playerAngleAdd %f", playerAngleAdd);
+	printfDx("\nangle %f", angle);*/
 	//printfDx("X %d Y %d", inputX, inputY);
 	//printfDx("\nangle %f", inputAngle);
 	//printfDx("\nangleBetween %f", angleBetween);
-	printfDx("\npower %f", power);
+	/*printfDx("\npower %f", power);
 	printfDx("\npowerAdd %f", powerAdd);
-	printfDx("\nvelocity %f", velocity);
+	printfDx("\nvelocity %f", velocity);*/
 	//printfDx("\nprevFrameInput %s", prevFrameInput ? "true" : "false");
 }
 

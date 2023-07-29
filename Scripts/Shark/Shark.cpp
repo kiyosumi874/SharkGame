@@ -11,6 +11,19 @@ Shark::Shark()
 	Init();
 }
 
+void Shark::Init()
+{
+	x = playerX + cosf(0.0f) * playerSize;
+	y = playerY + sinf(0.0f) * playerSize;
+	iangle = 0.0f;
+	imageAngle = 0;
+	effectHandle = 0;
+	endFlag = false;
+	isThrow = false;
+	isLandsOnWater = false;
+	stateType = PlayerRound;
+}
+
 void Shark::Update(float deltaTime)
 {	
 	switch (stateType)
@@ -32,13 +45,11 @@ void Shark::Update(float deltaTime)
 
 void Shark::Draw()
 {
-	//if (stateType == SharkRound) //エフェクトはSharkRのみ描画
-	//{
-	//	DrawRotaGraph3((SCREEN_WIDTH / 2),SCREEN_HEIGHT / 2,effectXSize - 150,effectYSize / 2,
-	//		1, 1,eAngle, effectImg[effectHandle], true);
-	//}
-
-	printfDx("\n%f", effectAngle);
+	if (stateType == SharkRound) //エフェクトはSharkRのみ描画
+	{
+		DrawRotaGraph3((SCREEN_WIDTH / 2) - 300, y,effectXSize / 2,effectYSize / 2,
+			effectMagnification, effectMagnification,eAngle, effectImg[effectHandle], true);
+	}
 
 	DrawRotaGraph(x, y, sharkMagnification, iangle, image, true, true);
 }
@@ -50,19 +61,6 @@ Shark::~Shark()
 	{
 		DeleteGraph(effectImg[i]);
 	}
-}
-
-void Shark::Init()
-{
-	x = playerX + cosf(0.0f) * playerSize;
-	y = playerY + sinf(0.0f) * playerSize;
-	iangle = 0.0f;
-	imageAngle = 0;
-	effectHandle = 0;
-	endFlag = false;
-	isThrow = false;
-	isLandsOnWater = false;
-	stateType = PlayerRound;
 }
 
 void Shark::UpdatePlayerRound(float deltaTime)
@@ -91,14 +89,39 @@ void Shark::UpdatePlayerRound(float deltaTime)
 	}
 }
 
+void Shark::InitTurn()
+{
+	stateType = Turn;
+}
+
+void Shark::UpdateTurn(float deltaTime)
+{
+	//回転
+	imageAngle++;
+	if (imageAngle == 12)
+	{
+		imageAngle = 0;
+	}
+	iangle = (DX_PI_F / 6) * imageAngle;
+
+	//移動
+	x += 10;
+	y += -7;
+
+	if (x >= SCREEN_WIDTH)
+	{
+		endFlag = true;
+	}
+}
+
 void Shark::InitSharkRound()
 {
 	stateType = SharkRound;
 	x = (SCREEN_WIDTH / 2) - 300;
-	y = SCREEN_HEIGHT;
+	y = SCREEN_HEIGHT - (SCREEN_HEIGHT / 3);
 
 	//スコアから飛ぶ時間計算
-	float score = maxScore; //仮に最大値
+	score = maxScore;
 	float allTime = score / maxScore * maxTime;
 	if (allTime > 6.0f)
 	{
@@ -167,39 +190,9 @@ void Shark::UpdateSharkRound(float deltaTime)
 	}
 
 	//エフェクトのアングル調整
-	effectAngle += eAValue;
+	effectAngle += eAValue * deltaTime;
 
-	eAngle = DX_PI_F / 180 * effectAngle;
-
-	
-}
-
-void Shark::InitTurn()
-{
-	x = 0;
-	y = SCREEN_HEIGHT;
-
-	stateType = Turn;
-}
-
-void Shark::UpdateTurn(float deltaTime)
-{
-	//回転
-	imageAngle++;
-	if (imageAngle == 12)
-	{
-		imageAngle = 0;
-	}
-	iangle = (DX_PI_F / 6) * imageAngle;
-
-	//移動
-	x += 5;
-	y += -3;
-
-	if (x >= SCREEN_WIDTH)
-	{
-		endFlag = true;
-	}
+	eAngle = DX_PI_F / 180 * effectAngle;	
 }
 
 void Shark::ModeChange(Mode mode)

@@ -13,6 +13,7 @@ GameStateSharkShoot::GameStateSharkShoot(ChangeStateMediator changeStateMediator
 void GameStateSharkShoot::OnEnter()
 {
 	initData.shark->SetScore(initData.player->GetVelocity());
+	initData.map->SetSpeed(initData.player->GetVelocity());
 }
 
 void GameStateSharkShoot::OnUpdate(float deltaTime)

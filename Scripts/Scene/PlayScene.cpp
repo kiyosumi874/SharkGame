@@ -10,6 +10,8 @@
 #include "UI/CountDownUI.h"
 #include "UI/PressAUI.h"
 #include "UI/ResultScoreUI.h"
+#include "ScoreDraw.h"
+#include "UI.h"
 
 /// <summary>
 /// コンストラクタ
@@ -23,6 +25,8 @@ PlayScene::PlayScene()
 	, countDownUI(nullptr)
 	, pressAToStartUI(nullptr)
 	, resultSocreUI(nullptr)
+	, scoreDraw(nullptr)
+	, ui(nullptr)
 {
 	shark = new Shark();
 	player = new Player();
@@ -32,6 +36,8 @@ PlayScene::PlayScene()
 	countDownUI = new CountDownUI({SCREEN_WIDTH / 2,SCREEN_HEIGHT / 2});
 	pressAToStartUI = new PressAUI("Textures/UI/PressAToStart.png", "Textures/UI/PressAToTitle.png", { SCREEN_WIDTH / 2 , SCREEN_HEIGHT * 2 / 3});
 	resultSocreUI = new ResultScoreUI({ SCREEN_WIDTH / 2 , SCREEN_HEIGHT / 2 });
+	scoreDraw = new ScoreDraw();
+	ui = new UI();
 	InitializeData initData;
 	initData.shark = shark;
 	initData.player = player;
@@ -40,6 +46,8 @@ PlayScene::PlayScene()
 	initData.countDownUI = countDownUI;
 	initData.pressAUI = pressAToStartUI;
 	initData.resultScoreUI = resultSocreUI;
+	initData.scoreDraw = scoreDraw;
+	initData.ui = ui;
 	gameStateMachine = new GameStateMachine(initData);
 }
 

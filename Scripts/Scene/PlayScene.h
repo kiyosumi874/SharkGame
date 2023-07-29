@@ -22,4 +22,6 @@ private:
 	class CountDownUI* countDownUI;
 	class PressAUI* pressAToStartUI;
 	class ResultScoreUI* resultSocreUI;
+	class ScoreDraw* scoreDraw;
+	class UI* ui;
 };

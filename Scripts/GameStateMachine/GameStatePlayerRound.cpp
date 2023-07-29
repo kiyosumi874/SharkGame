@@ -4,6 +4,7 @@
 #include "Shark/Shark.h"
 #include "Player/Player.h"
 #include "Map/Map.h"
+#include "UI.h"
 
 GameStatePlayerRound::GameStatePlayerRound(ChangeStateMediator changeStateMediator, GameStateMachine* gameStateMachine, InitializeData initData)
 	: GameStateBase(changeStateMediator, gameStateMachine, initData)
@@ -41,6 +42,7 @@ void GameStatePlayerRound::OnDraw()
 	initData.map->DrawBeach();
 	initData.player->Draw();
 	initData.shark->Draw();
+	initData.ui->ControllerDraw(1000,500);
 }
 
 void GameStatePlayerRound::OnExit()

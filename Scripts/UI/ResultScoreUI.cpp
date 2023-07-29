@@ -7,7 +7,7 @@ ResultScoreUI::ResultScoreUI(Pos position)
 	, score(0)
 	, position()
 {
-	font = CreateFontToHandle("‚l‚r ƒSƒVƒbƒN", 100, 6, DX_FONTTYPE_ANTIALIASING_EDGE);
+	font = CreateFontToHandle("Impact", 100, 0, DX_FONTTYPE_ANTIALIASING_EDGE);
 	this->position = position;
 }
 
@@ -22,5 +22,5 @@ void ResultScoreUI::Initialize(int score)
 
 void ResultScoreUI::Draw()
 {
-	DrawStringToHandle(position.x, position.y, (std::to_string(score) + "Km").c_str(), GetColor(255, 255, 255), font);
+	DrawStringToHandle(position.x-550, position.y-200, ("Record : " + std::to_string(score) + " Km").c_str(), GetColor(0, 0, 0), font);
 }

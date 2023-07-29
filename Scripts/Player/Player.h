@@ -32,10 +32,10 @@ public:
 	float GetRotationRad() const { return playerAngle; }
 
 	/// <summary>
-	/// 確定した最終速度
+	/// 確定した最終速度 (値固定)
 	/// </summary>
 	/// <returns></returns>
-	float GetVelocity() const { return velocity; }
+	float GetVelocity() const { return 300; }
 
 	/// <summary>
 	/// ボタンを押したか
@@ -76,6 +76,8 @@ private:
 
 	float velocity;
 
+	float angle;
+
 	int timer;
 
 	bool prevFrameInput;	// 前のフレームで入力があったか
@@ -83,4 +85,5 @@ private:
 	bool isStartTimer;
 
 	bool pushFlg;
+	int graphHandle2;
 };

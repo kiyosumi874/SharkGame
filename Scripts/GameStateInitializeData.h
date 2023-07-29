@@ -19,4 +19,6 @@ struct InitializeData
     class CountDownUI* countDownUI;
     class PressAUI* pressAUI;
     class ResultScoreUI* resultScoreUI;
+    class ScoreDraw* scoreDraw;
+    class UI* ui;
 };

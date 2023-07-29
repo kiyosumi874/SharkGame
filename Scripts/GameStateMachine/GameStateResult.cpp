@@ -4,6 +4,7 @@
 #include "UI/PressAUI.h"
 #include "Map/Map.h"
 #include "UI/ResultScoreUI.h"
+#include "ScoreDraw.h"
 
 GameStateResult::GameStateResult(ChangeStateMediator changeStateMediator, GameStateMachine* gameStateMachine, InitializeData initData)
 	: GameStateBase(changeStateMediator, gameStateMachine, initData)
@@ -13,7 +14,7 @@ GameStateResult::GameStateResult(ChangeStateMediator changeStateMediator, GameSt
 void GameStateResult::OnEnter()
 {
 	initData.pressAUI->Initialize(false);
-	initData.resultScoreUI->Initialize(0);
+	initData.resultScoreUI->Initialize(initData.scoreDraw->GetScore());
 }
 
 void GameStateResult::OnUpdate(float deltaTime)

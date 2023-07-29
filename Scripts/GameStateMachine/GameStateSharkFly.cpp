@@ -3,6 +3,8 @@
 #include "Input/Input.h"
 #include "Shark/Shark.h"
 #include "Map/Map.h"
+#include "Player/Player.h"
+#include "ScoreDraw.h"
 
 GameStateSharkFly::GameStateSharkFly(ChangeStateMediator changeStateMediator, GameStateMachine* gameStateMachine, InitializeData initData)
 	: GameStateBase(changeStateMediator, gameStateMachine, initData)
@@ -12,6 +14,7 @@ GameStateSharkFly::GameStateSharkFly(ChangeStateMediator changeStateMediator, Ga
 void GameStateSharkFly::OnEnter()
 {
 	initData.shark->InitSharkRound();
+	initData.scoreDraw->Initialize();
 }
 
 void GameStateSharkFly::OnUpdate(float deltaTime)
@@ -22,7 +25,7 @@ void GameStateSharkFly::OnUpdate(float deltaTime)
 	}
 	initData.map->Update(deltaTime);
 	initData.shark->UpdateSharkRound(deltaTime);
-
+	initData.scoreDraw->Update();
 	if (initData.shark->GetisLandsOnWater())
 	{
 		ChangeState(GameStateType::SharkLandsOnWater);
@@ -36,6 +39,7 @@ void GameStateSharkFly::OnDraw()
 #endif // _DEBUG
 	initData.map->Draw();
 	initData.shark->Draw();
+	initData.scoreDraw->Draw();
 }
 
 void GameStateSharkFly::OnExit()

@@ -25,8 +25,13 @@ private:
 	};
 
 	POS normalImagePos[3];
+	POS normalSeaImagePos[3];
 	POS darkerImagePos[3];
+	POS UFOPos;
+	float UFOrad;
+	int UFOImage;
 	int normalImage[3];
+	int normalSeaImage[3];
 	int darkerImage[3];
 	int sunahamImage;
 	int sprashImage;
@@ -35,6 +40,7 @@ private:
 	float speed;
 	float speedRatio;
 	float addStarTimer;
+	float UFODis;
 
 	bool downFlag;
 	float maxTime;

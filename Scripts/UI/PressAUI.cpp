@@ -32,7 +32,7 @@ void PressAUI::Initialize(bool isTitleUI)
 
 void PressAUI::Update(float deltaTime)
 {
-	alphaCount += deltaTime;
+	alphaCount += deltaTime*5.0f;
 	alpha = (cosf(alphaCount) * 255.0f + 510.0f) / 4.0f;
 }
 

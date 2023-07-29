@@ -63,21 +63,23 @@
     <ClCompile Include="Scripts\UI\PressAUI.cpp">
       <Filter>UI</Filter>
     </ClCompile>
-    <ClCompile Include="Scripts\UI\ResultScoreUI.cpp">
-      <Filter>UI</Filter>
-    </ClCompile>
-    <ClCompile Include="Scripts\Map\Star.cpp">
-      <Filter>Map</Filter>
-    </ClCompile>
-    <ClCompile Include="Scripts\Player\Player.cpp">
-      <Filter>Player</Filter>
+    <ClCompile Include="Scripts\Shark\Shark.cpp">
+      <Filter>Shark</Filter>
     </ClCompile>
     <ClCompile Include="Scripts\Map\Map.cpp">
       <Filter>Map</Filter>
     </ClCompile>
-    <ClCompile Include="Scripts\Shark\Shark.cpp">
-      <Filter>Shark</Filter>
+    <ClCompile Include="Scripts\Map\Star.cpp">
+      <Filter>Map</Filter>
     </ClCompile>
+    <ClCompile Include="Scripts\UI.cpp" />
+    <ClCompile Include="Scripts\Player\Player.cpp">
+      <Filter>Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\UI\ResultScoreUI.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\ScoreDraw.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scripts\App.h" />
@@ -152,18 +154,20 @@
     <ClInclude Include="Scripts\UI\ResultScoreUI.h">
       <Filter>UI</Filter>
     </ClInclude>
-    <ClInclude Include="Scripts\Map\Star.h">
-      <Filter>Map</Filter>
-    </ClInclude>
-    <ClInclude Include="Scripts\Player\Player.h">
-      <Filter>Player</Filter>
+    <ClInclude Include="Scripts\Shark\Shark.h">
+      <Filter>Shark</Filter>
     </ClInclude>
     <ClInclude Include="Scripts\Map\Map.h">
       <Filter>Map</Filter>
     </ClInclude>
-    <ClInclude Include="Scripts\Shark\Shark.h">
-      <Filter>Shark</Filter>
+    <ClInclude Include="Scripts\Map\Star.h">
+      <Filter>Map</Filter>
     </ClInclude>
+    <ClInclude Include="Scripts\UI.h" />
+    <ClInclude Include="Scripts\Player\Player.h">
+      <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\ScoreDraw.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Time">
